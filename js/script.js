@@ -79,11 +79,11 @@
         popsubmit.onclick = function(){
             var userName1 = hex_md5(popinputs[0].value);
             var password1 = hex_md5(popinputs[1].value);
-            getrequest('http://study.163.com/webDev/login.htm',"userName=" + userName1 + "&password=" + password1,function(logindata){
+            getrequest('https://study.163.com/webDev/login.htm',"userName=" + userName1 + "&password=" + password1,function(logindata){
                 if(logindata === '1' ){
                     poplog.style.display = 'none';
                     setCookie ('loginSuc', '1', 1);
-                    getrequest('http://study.163.com/webDev/attention.htm',"",function(focusdata){
+                    getrequest('https://study.163.com/webDev/attention.htm',"",function(focusdata){
                         if(focusdata === '1' ){
                             setCookie ('followSuc', '1', 1);
                             loginbt.value = '已关注';
@@ -206,7 +206,7 @@
                     }
                 }
             }
-            xhr.open("get",'http://study.163.com/webDev/couresByCategory.htm?' + str,true);
+            xhr.open("get",'https://study.163.com/webDev/couresByCategory.htm?' + str,true);
             xhr.send();
         }
         var nowwidth;
@@ -313,7 +313,7 @@
     //右侧热门排行
     function rankingfunction(){
         var mwrap2 = document.getElementById("mwrap2");
-        getrequest("http://study.163.com/webDev/hotcouresByCategory.htm","",function(a){
+        getrequest("https://study.163.com/webDev/hotcouresByCategory.htm","",function(a){
             var data = JSON.parse(a);
             for( var i=0; i<20; i++){
                 mwrap2.innerHTML += '<a href="' + data[i].providerLink + '">\
