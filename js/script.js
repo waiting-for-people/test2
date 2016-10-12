@@ -346,10 +346,12 @@
         var videoimg = document.getElementById("videoimg");
         var popbox = document.getElementById("popbox");
         var videoclose = document.getElementById("videoclose");
+        var video = document.getElementById("video");
         videoimg.onclick = function(){
             popbox.style.display = "block";
             videoclose.onclick = function(){
                 popbox.style.display = "none";
+                video.pause();
             }
         }
     }
